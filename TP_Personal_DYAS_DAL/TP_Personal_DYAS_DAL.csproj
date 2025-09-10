@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{387D4B03-A11C-4C93-BFD7-0F18C5943A30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TP_Personal_DYAS_DAL</RootNamespace>
+    <AssemblyName>TP_Personal_DYAS_DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso.cs" />
+    <Compile Include="Mapper.cs" />
+    <Compile Include="NacionalidadMapper.cs" />
+    <Compile Include="PersonaMapper.cs" />
+    <Compile Include="ProfesionMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL_Scripts\02_init_tables.sql" />
+    <Content Include="SQL_Scripts\01_create_database.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\Resumen\PromedioEdadPorNacionalidad.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\Resumen\PersonasPorNacionalidad.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\Resumen\NacionalidadMenosPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\UpdateNacionalidad.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\DeleteNacionalidad.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\CreateNacionalidad.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\GetNacionalidades.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\CreatePersona.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\DeletePersona.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\GetEdadPersona.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Nacionalidad\Resumen\NacionalidadMasPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\Resumen\MaximaEdadPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\Resumen\MinimaEdadPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\Resumen\PromedioEdadPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\Resumen\CantidadPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\SearchPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\GetPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Persona\UpdatePersona.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Profesion\CreateProfesion.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Profesion\DeleteProfesion.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Profesion\GetProfesiones.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Profesion\Resumen\ProfesionMasPersonas.sql" />
+    <Content Include="SQL_Scripts\Store Procedures\Profesion\UpdateProfesiones.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TP_Personal_DYAS_BE\TP_Personal_DYAS_BE.csproj">
+      <Project>{230f55aa-cd61-4e3b-a495-f4b86f3fae72}</Project>
+      <Name>TP_Personal_DYAS_BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
