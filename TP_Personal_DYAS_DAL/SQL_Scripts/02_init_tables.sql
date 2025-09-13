@@ -23,5 +23,5 @@ CREATE TABLE Persona (
 	foreign key (id_nacionalidad) references Nacionalidad(id)
 )
 
-CREATE UNIQUE INDEX idx_profesion_descripcion ON Profesion(descripcion);
-CREATE UNIQUE INDEX idx_nacionalidad_descripcion ON Nacionalidad(descripcion);
+CREATE UNIQUE INDEX idx_profesion_descripcion ON Profesion(descripcion) WHERE status <> 'Deleted';
+CREATE UNIQUE INDEX idx_nacionalidad_descripcion ON Nacionalidad(descripcion) WHERE status <> 'Deleted';

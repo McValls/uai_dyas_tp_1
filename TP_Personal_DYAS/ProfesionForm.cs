@@ -12,11 +12,11 @@ using TP_Personal_DYAS_BLL;
 
 namespace TP_Personal_DYAS
 {
-    public partial class ProfesionUserControl : UserControl
+    public partial class ProfesionForm : Form
     {
         Profesiones profesiones;
 
-        public ProfesionUserControl()
+        public ProfesionForm()
         {
             InitializeComponent();
             profesiones = new Profesiones();
@@ -49,17 +49,19 @@ namespace TP_Personal_DYAS
                 .Select(profesion => new ProfesionDataSource(profesion))
                 .ToList();
         }
-        private void ProfesionDataSourceGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void ProfesionDataSourceGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (ProfesionDataSourceGrid.Columns[e.ColumnIndex].HeaderText == "Eliminar")
             {
-                HandleDelete(e);   
+                HandleDelete(e);
             }
             if (ProfesionDataSourceGrid.Columns[e.ColumnIndex].HeaderText == "Editar")
             {
                 HandleEdit(e);
             }
         }
+
 
         private void HandleDelete(DataGridViewCellEventArgs e)
         {
@@ -68,7 +70,8 @@ namespace TP_Personal_DYAS
                 ProfesionDataSource profesionDS = (ProfesionDataSource)ProfesionDataSourceGrid.Rows[e.RowIndex].DataBoundItem;
                 Profesion profesion = new Profesion(profesionDS.Id);
                 profesiones.EliminarProfesion(profesion);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Ha ocurrido un error intentando eliminar la profesión: {ex.Message}");
             }
@@ -107,6 +110,5 @@ namespace TP_Personal_DYAS
             public int Id { get => id; set => id = value; }
             public string Descripcion { get => descripcion; set => descripcion = value; }
         }
-
     }
 }

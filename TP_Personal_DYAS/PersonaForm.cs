@@ -12,7 +12,7 @@ using TP_Personal_DYAS_BLL;
 
 namespace TP_Personal_DYAS
 {
-    public partial class PersonaUserControl : UserControl
+    public partial class PersonaForm : Form
     {
 
         public Personas personas = new Personas();
@@ -20,7 +20,7 @@ namespace TP_Personal_DYAS
         public Nacionalidades nacionalidades = new Nacionalidades();
 
 
-        public PersonaUserControl()
+        public PersonaForm()
         {
             InitializeComponent();
             sexoCombo.DataSource = Enum.GetValues(typeof(Sexo));
@@ -91,7 +91,7 @@ namespace TP_Personal_DYAS
                     MessageBox.Show($"La profesión es obligatoria. Si aún no cargaste ninguna, dirigite a Configuraciones -> Profesiones");
                     return;
                 }
-            
+
                 if (idNacionalidad == 0)
                 {
                     MessageBox.Show($"La nacionalidad es obligatoria. Si aún no cargaste ninguna, dirigite a Configuraciones -> Nacionalidades");
@@ -100,7 +100,8 @@ namespace TP_Personal_DYAS
 
                 Persona persona = new Persona(nombre, apellido, fechaNacimiento, sexo, idNacionalidad, idProfesion);
                 personas.CreatePersona(persona);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Ha ocurrido un error al crear la persona: {ex.Message}");
             }
@@ -133,6 +134,7 @@ namespace TP_Personal_DYAS
             }
         }
 
+
         private void HandleDelete(DataGridViewCellEventArgs e)
         {
             try
@@ -140,7 +142,8 @@ namespace TP_Personal_DYAS
                 PersonaDataSource personaDataSource = (PersonaDataSource)personasDataGridView.Rows[e.RowIndex].DataBoundItem;
                 Persona persona = new Persona(personaDataSource.NroPersona);
                 personas.EliminarPersona(persona);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Ha ocurrido un error al eliminar la persona: {ex.Message}");
             }
@@ -200,9 +203,11 @@ namespace TP_Personal_DYAS
         private void buscarBtn_Click(object sender, EventArgs e)
         {
             string nroPersonaText = nroPersonaFiltroTxt.Text;
-            if (nroPersonaText.Trim().Length == 0 || !int.TryParse(nroPersonaText, out _)) {
+            if (nroPersonaText.Trim().Length == 0 || !int.TryParse(nroPersonaText, out _))
+            {
                 RefrescarTabla();
-            } else
+            }
+            else
             {
                 int nroPersona = int.Parse(nroPersonaText);
                 RefrescarTabla(nroPersona);

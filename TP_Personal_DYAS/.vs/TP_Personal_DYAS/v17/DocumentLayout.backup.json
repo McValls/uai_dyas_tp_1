@@ -3,152 +3,85 @@
   "WorkspaceRootPath": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\profesionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:profesionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\profesionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:profesionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\nacionalidadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:nacionalidadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|TP_Personal_DYAS_GUI||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\personausercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:personausercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3312F48-9E3F-45AB-8DD3-9E78D6BF1572}|..\\TP_Personal_DYAS_BLL\\TP_Personal_DYAS_BLL.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas_bll\\personas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{387D4B03-A11C-4C93-BFD7-0F18C5943A30}|..\\TP_Personal_DYAS_DAL\\TP_Personal_DYAS_DAL.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas_dal\\personamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+      "AbsoluteMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|c:\\users\\marcelo valls\\source\\repos\\tp\\tp_personal_dyas\\nacionalidadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3F974818-C469-40E1-9AFE-4511ACF9959C}|TP_Personal_DYAS_GUI.csproj|solutionrelative:nacionalidadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 374,
+          "DockedHeight": 694,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Title": "ProfesionForm.cs",
+              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\ProfesionForm.cs",
+              "RelativeDocumentMoniker": "ProfesionForm.cs",
+              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\ProfesionForm.cs",
+              "RelativeToolTip": "ProfesionForm.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T23:30:51.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Settings.settings",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Properties\\Settings.settings",
-              "RelativeDocumentMoniker": "Properties\\Settings.settings",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Properties\\Settings.settings",
-              "RelativeToolTip": "Properties\\Settings.settings",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-09-10T23:30:13.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TP_Personal_DYAS_GUI",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\TP_Personal_DYAS_GUI.csproj",
-              "RelativeDocumentMoniker": "TP_Personal_DYAS_GUI.csproj",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\TP_Personal_DYAS_GUI.csproj",
-              "RelativeToolTip": "TP_Personal_DYAS_GUI.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-09-10T23:30:00.701Z",
+              "WhenOpened": "2025-09-13T02:33:46.318Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAASAAAAAAAAAA==",
+              "Title": "ProfesionForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\ProfesionForm.cs",
+              "RelativeDocumentMoniker": "ProfesionForm.cs",
+              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\ProfesionForm.cs [Design]",
+              "RelativeToolTip": "ProfesionForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T23:26:31.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T23:26:07.615Z",
+              "WhenOpened": "2025-09-13T02:33:43.911Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Personas.cs",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS_BLL\\Personas.cs",
-              "RelativeDocumentMoniker": "..\\TP_Personal_DYAS_BLL\\Personas.cs",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS_BLL\\Personas.cs",
-              "RelativeToolTip": "..\\TP_Personal_DYAS_BLL\\Personas.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAmwAoAAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "NacionalidadForm.cs",
+              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\NacionalidadForm.cs",
+              "RelativeDocumentMoniker": "NacionalidadForm.cs",
+              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\NacionalidadForm.cs",
+              "RelativeToolTip": "NacionalidadForm.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwC0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T23:22:18.01Z",
+              "WhenOpened": "2025-09-13T02:29:06.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PersonaUserControl.cs",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\PersonaUserControl.cs",
-              "RelativeDocumentMoniker": "PersonaUserControl.cs",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\PersonaUserControl.cs",
-              "RelativeToolTip": "PersonaUserControl.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAAwNAAAAANAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "NacionalidadForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\NacionalidadForm.cs",
+              "RelativeDocumentMoniker": "NacionalidadForm.cs",
+              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS\\NacionalidadForm.cs [Design]",
+              "RelativeToolTip": "NacionalidadForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T23:20:27.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PersonaMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS_DAL\\PersonaMapper.cs",
-              "RelativeDocumentMoniker": "..\\TP_Personal_DYAS_DAL\\PersonaMapper.cs",
-              "ToolTip": "C:\\Users\\Marcelo Valls\\source\\repos\\TP\\TP_Personal_DYAS_DAL\\PersonaMapper.cs",
-              "RelativeToolTip": "..\\TP_Personal_DYAS_DAL\\PersonaMapper.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAgwG0AAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T02:24:50.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T02:29:00.27Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },
         {
-          "DockedWidth": 239,
+          "DockedHeight": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {

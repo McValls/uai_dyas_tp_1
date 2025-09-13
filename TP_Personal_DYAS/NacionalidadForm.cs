@@ -12,11 +12,11 @@ using TP_Personal_DYAS_BLL;
 
 namespace TP_Personal_DYAS
 {
-    public partial class NacionalidadUserControl : UserControl
+    public partial class NacionalidadForm : Form
     {
         private Nacionalidades nacionalidades;
 
-        public NacionalidadUserControl()
+        public NacionalidadForm()
         {
             InitializeComponent();
             nacionalidades = new Nacionalidades();
@@ -69,7 +69,8 @@ namespace TP_Personal_DYAS
                 NacionalidadDataSource nacionalidadDS = (NacionalidadDataSource)NacionalidadDataSourceGrid.Rows[e.RowIndex].DataBoundItem;
                 Nacionalidad nacionalidad = new Nacionalidad(nacionalidadDS.Id);
                 nacionalidades.EliminarNacionalidad(nacionalidad);
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"Ha ocurrido un error intentando eliminar la nacionalidad: {ex.Message}");
             }

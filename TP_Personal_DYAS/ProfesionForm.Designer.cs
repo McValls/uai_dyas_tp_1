@@ -1,13 +1,13 @@
 ﻿namespace TP_Personal_DYAS
 {
-    partial class NacionalidadUserControl
+    partial class ProfesionForm
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,15 +20,15 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.NacionalidadDataSourceGrid = new System.Windows.Forms.DataGridView();
+            this.ProfesionDataSourceGrid = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -36,24 +36,24 @@
             this.agregarBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.descripcionTxt = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.NacionalidadDataSourceGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfesionDataSourceGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // NacionalidadDataSourceGrid
+            // ProfesionDataSourceGrid
             // 
-            this.NacionalidadDataSourceGrid.AllowUserToAddRows = false;
-            this.NacionalidadDataSourceGrid.AllowUserToDeleteRows = false;
-            this.NacionalidadDataSourceGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.NacionalidadDataSourceGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProfesionDataSourceGrid.AllowUserToAddRows = false;
+            this.ProfesionDataSourceGrid.AllowUserToDeleteRows = false;
+            this.ProfesionDataSourceGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProfesionDataSourceGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Descripcion,
             this.Editar,
             this.Eliminar});
-            this.NacionalidadDataSourceGrid.Location = new System.Drawing.Point(3, 59);
-            this.NacionalidadDataSourceGrid.Name = "NacionalidadDataSourceGrid";
-            this.NacionalidadDataSourceGrid.Size = new System.Drawing.Size(753, 341);
-            this.NacionalidadDataSourceGrid.TabIndex = 7;
-            this.NacionalidadDataSourceGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NacionalidadDataSourceGrid_CellContentClick);
+            this.ProfesionDataSourceGrid.Location = new System.Drawing.Point(17, 69);
+            this.ProfesionDataSourceGrid.Name = "ProfesionDataSourceGrid";
+            this.ProfesionDataSourceGrid.Size = new System.Drawing.Size(753, 341);
+            this.ProfesionDataSourceGrid.TabIndex = 15;
+            this.ProfesionDataSourceGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProfesionDataSourceGrid_CellContentClick_1);
             // 
             // Id
             // 
@@ -86,10 +86,10 @@
             // 
             // agregarBtn
             // 
-            this.agregarBtn.Location = new System.Drawing.Point(658, 30);
+            this.agregarBtn.Location = new System.Drawing.Point(672, 40);
             this.agregarBtn.Name = "agregarBtn";
             this.agregarBtn.Size = new System.Drawing.Size(112, 23);
-            this.agregarBtn.TabIndex = 6;
+            this.agregarBtn.TabIndex = 14;
             this.agregarBtn.Text = "Agregar";
             this.agregarBtn.UseVisualStyleBackColor = true;
             this.agregarBtn.Click += new System.EventHandler(this.agregarBtn_Click);
@@ -97,30 +97,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 33);
+            this.label1.Location = new System.Drawing.Point(20, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "País";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Profesión";
             // 
             // descripcionTxt
             // 
-            this.descripcionTxt.Location = new System.Drawing.Point(63, 30);
+            this.descripcionTxt.Location = new System.Drawing.Point(77, 40);
             this.descripcionTxt.Name = "descripcionTxt";
             this.descripcionTxt.Size = new System.Drawing.Size(589, 20);
-            this.descripcionTxt.TabIndex = 4;
+            this.descripcionTxt.TabIndex = 12;
             // 
-            // NacionalidadUserControl
+            // ProfesionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.NacionalidadDataSourceGrid);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ProfesionDataSourceGrid);
             this.Controls.Add(this.agregarBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.descripcionTxt);
-            this.Name = "NacionalidadUserControl";
-            this.Size = new System.Drawing.Size(797, 425);
-            ((System.ComponentModel.ISupportInitialize)(this.NacionalidadDataSourceGrid)).EndInit();
+            this.Name = "ProfesionForm";
+            this.Text = "ProfesionForm";
+            ((System.ComponentModel.ISupportInitialize)(this.ProfesionDataSourceGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +129,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView NacionalidadDataSourceGrid;
+        private System.Windows.Forms.DataGridView ProfesionDataSourceGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
