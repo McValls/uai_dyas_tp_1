@@ -24,6 +24,29 @@ namespace TP_Personal_DYAS_DAL
             connection.Close();
         }
 
+        public IDbTransaction IniciarTransaccion()
+        {
+            return connection.BeginTransaction();
+        }
+
+        public void CommitTransaccion(IDbTransaction sqlTransaction)
+        {
+            if (sqlTransaction == null)
+            {
+                throw new Exception("No se puede hacer un commit sin una transacción existente");
+            }
+            sqlTransaction.Commit();
+        }
+
+        public void RollbackTransaccion(IDbTransaction sqlTransaction)
+        {
+            if (sqlTransaction == null)
+            {
+                throw new Exception("No se puede hacer un rollback sin una transacción existente");
+            }
+            sqlTransaction.Rollback();
+        }
+
         public int Escribir(string sp)
         {
             return Escribir(sp, null);

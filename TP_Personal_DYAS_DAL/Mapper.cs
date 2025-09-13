@@ -60,9 +60,20 @@ namespace TP_Personal_DYAS_DAL
 
         public int Insertar(T t)
         {
+
             int affectedRows = 0;
             SqlParameter[] parametro = ParseData(t);
-            affectedRows = acceso.Escribir(insertarStoreProcedure, parametro);
+
+            var tx = acceso.IniciarTransaccion();
+            try
+            {
+                affectedRows = acceso.Escribir(insertarStoreProcedure, parametro);
+                acceso.CommitTransaccion(tx);
+            } catch (Exception ex)
+            {
+                acceso.RollbackTransaccion(tx);
+                throw ex;
+            }
 
             return affectedRows;
         }
@@ -71,7 +82,18 @@ namespace TP_Personal_DYAS_DAL
         {
             int affectedRows = 0;
             SqlParameter[] parametro = ParseData(t);
-            affectedRows = acceso.Escribir(editarStoreProcedure, parametro);
+            
+            var tx = acceso.IniciarTransaccion();
+            try
+            {
+                affectedRows = acceso.Escribir(editarStoreProcedure, parametro);
+                acceso.CommitTransaccion(tx);
+            }
+            catch (Exception ex)
+            {
+                acceso.RollbackTransaccion(tx);
+                throw ex;
+            }
 
             return affectedRows;
         }
@@ -81,8 +103,18 @@ namespace TP_Personal_DYAS_DAL
             int affectedRows = 0;
             SqlParameter[] parametro = new SqlParameter[1];
             parametro[0] = new SqlParameter($"@{columnaPK.ToLower()}", pk);
-
-            affectedRows = acceso.Escribir(eliminarStoreProcedure, parametro);
+            
+            var tx = acceso.IniciarTransaccion();
+            try
+            {
+                affectedRows = acceso.Escribir(eliminarStoreProcedure, parametro);
+                acceso.CommitTransaccion(tx);
+            }
+            catch (Exception ex)
+            {
+                acceso.RollbackTransaccion(tx);
+                throw ex;
+            }
 
             return affectedRows;
         }
