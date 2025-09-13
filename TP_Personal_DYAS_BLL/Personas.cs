@@ -46,6 +46,7 @@ namespace TP_Personal_DYAS_BLL
 
         public void CreatePersona(Persona persona)
         {
+            ValidarPersona(persona);
             int affectedRows = personaMapper.Insertar(persona);
             if (affectedRows == 0)
             {
@@ -66,12 +67,22 @@ namespace TP_Personal_DYAS_BLL
 
         public void UpdatePersona(Persona persona)
         {
+            ValidarPersona(persona);
             int affectedRows = personaMapper.Editar(persona);
             if (affectedRows == 0)
             {
                 throw new Exception("No se pudo editar la persona");
             }
             OnChangeEvent();
+        }
+
+        private void ValidarPersona(Persona persona)
+        {
+            if (persona.FechaNacimiento.CompareTo(DateTime.Now) > 0)
+            {
+                throw new Exception("La fecha de nacimiento no puede ser en el futuro");
+            }
+            
         }
 
     }

@@ -119,7 +119,7 @@
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.panelPrincipal);
             this.Name = "TPPersonalForm";
-            this.Text = "Form1";
+            this.Text = "Personal";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip2.ResumeLayout(false);

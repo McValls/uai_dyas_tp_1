@@ -58,45 +58,46 @@ namespace TP_Personal_DYAS
 
         private void agregarBtn_Click(object sender, EventArgs e)
         {
-            string nombre = nombreTxt.Text;
-            string apellido = apellidoTxt.Text;
-            DateTime fechaNacimiento = DateTime.Parse(fechaNacimientoTxt.Text);
-            Sexo sexo = (Sexo)sexoCombo.SelectedItem;
-            int idProfesion = ((Profesion)profesionCombo.SelectedItem).Id;
-            int idNacionalidad = ((Nacionalidad)nacionalidadCombo.SelectedItem).Id;
-
-            if (nombre.Trim().Length == 0)
-            {
-                MessageBox.Show($"El nombre no puede estar vacío");
-                return;
-            }
-
-            if (apellido.Trim().Length == 0)
-            {
-                MessageBox.Show($"El apellido no puede estar vacío");
-                return;
-            }
-
-            if (fechaNacimiento == null)
-            {
-                MessageBox.Show($"La fecha de nacimiento no puede estar vacía");
-                return;
-            }
-
-            if (idProfesion == 0)
-            {
-                MessageBox.Show($"La profesión es obligatoria. Si aún no cargaste ninguna, dirigite a Configuraciones -> Profesiones");
-                return;
-            }
-            
-            if (idNacionalidad == 0)
-            {
-                MessageBox.Show($"La nacionalidad es obligatoria. Si aún no cargaste ninguna, dirigite a Configuraciones -> Nacionalidades");
-                return;
-            }
 
             try
             {
+                string nombre = nombreTxt.Text;
+                string apellido = apellidoTxt.Text;
+                DateTime fechaNacimiento = DateTime.Parse(fechaNacimientoTxt.Text);
+                Sexo sexo = (Sexo)sexoCombo.SelectedItem;
+                int idProfesion = ((Profesion)profesionCombo.SelectedItem).Id;
+                int idNacionalidad = ((Nacionalidad)nacionalidadCombo.SelectedItem).Id;
+
+                if (nombre.Trim().Length == 0)
+                {
+                    MessageBox.Show($"El nombre no puede estar vacío");
+                    return;
+                }
+
+                if (apellido.Trim().Length == 0)
+                {
+                    MessageBox.Show($"El apellido no puede estar vacío");
+                    return;
+                }
+
+                if (fechaNacimiento == null)
+                {
+                    MessageBox.Show($"La fecha de nacimiento no puede estar vacía");
+                    return;
+                }
+
+                if (idProfesion == 0)
+                {
+                    MessageBox.Show($"La profesión es obligatoria. Si aún no cargaste ninguna, dirigite a Configuraciones -> Profesiones");
+                    return;
+                }
+            
+                if (idNacionalidad == 0)
+                {
+                    MessageBox.Show($"La nacionalidad es obligatoria. Si aún no cargaste ninguna, dirigite a Configuraciones -> Nacionalidades");
+                    return;
+                }
+
                 Persona persona = new Persona(nombre, apellido, fechaNacimiento, sexo, idNacionalidad, idProfesion);
                 personas.CreatePersona(persona);
             } catch (Exception ex)
@@ -208,7 +209,7 @@ namespace TP_Personal_DYAS
             }
         }
 
-        class PersonaDataSource
+        private class PersonaDataSource
         {
             private int nroPersona;
             private string nombre;

@@ -52,3 +52,5 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+TP_Personal_DYAS/.vs/TP_Personal_DYAS/FileContentIndex/*.vsidx
