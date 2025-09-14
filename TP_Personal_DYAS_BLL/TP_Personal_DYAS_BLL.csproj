@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nacionalidades.cs" />
-    <Compile Include="Personas.cs" />
-    <Compile Include="Profesiones.cs" />
+    <Compile Include="NacionalidadBLL.cs" />
+    <Compile Include="PersonaBLL.cs" />
+    <Compile Include="ProfesionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

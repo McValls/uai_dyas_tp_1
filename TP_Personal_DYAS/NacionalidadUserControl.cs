@@ -14,12 +14,12 @@ namespace TP_Personal_DYAS
 {
     public partial class NacionalidadUserControl : UserControl
     {
-        private Nacionalidades nacionalidades;
+        private NacionalidadBLL nacionalidades;
 
         public NacionalidadUserControl()
         {
             InitializeComponent();
-            nacionalidades = new Nacionalidades();
+            nacionalidades = new NacionalidadBLL();
             nacionalidades.OnChangeEvent += RefrescarTabla;
 
             RefrescarTabla();

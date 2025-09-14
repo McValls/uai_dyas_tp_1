@@ -14,12 +14,12 @@ namespace TP_Personal_DYAS
 {
     public partial class ProfesionUserControl : UserControl
     {
-        Profesiones profesiones;
+        ProfesionBLL profesiones;
 
         public ProfesionUserControl()
         {
             InitializeComponent();
-            profesiones = new Profesiones();
+            profesiones = new ProfesionBLL();
 
             profesiones.OnChangeEvent += RefrescarTabla;
             RefrescarTabla();

@@ -13,6 +13,7 @@ namespace TP_Personal_DYAS_DAL
         
         private readonly string connectionString = "Data Source=DESKTOP-MIQ4GPN\\MSSQLSERVER01;Initial Catalog=Contrataciones;Integrated Security=True;";
         SqlConnection connection = new SqlConnection();
+        SqlTransaction transaccion = null;
         private void Conectar()
         {
             connection.ConnectionString = connectionString;
@@ -24,27 +25,32 @@ namespace TP_Personal_DYAS_DAL
             connection.Close();
         }
 
-        public IDbTransaction IniciarTransaccion()
+        public void IniciarTransaccion()
         {
-            return connection.BeginTransaction();
+            Conectar();
+            this.transaccion = connection.BeginTransaction();
         }
 
-        public void CommitTransaccion(IDbTransaction sqlTransaction)
+        public void CommitTransaccion()
         {
-            if (sqlTransaction == null)
+            if (this.transaccion == null)
             {
                 throw new Exception("No se puede hacer un commit sin una transacción existente");
             }
-            sqlTransaction.Commit();
+            this.transaccion.Commit();
+            this.transaccion = null;
+            Desconectar();
         }
 
-        public void RollbackTransaccion(IDbTransaction sqlTransaction)
+        public void RollbackTransaccion()
         {
-            if (sqlTransaction == null)
+            if (this.transaccion == null)
             {
                 throw new Exception("No se puede hacer un rollback sin una transacción existente");
             }
-            sqlTransaction.Rollback();
+            this.transaccion.Rollback();
+            this.transaccion = null;
+            Desconectar();
         }
 
         public int Escribir(string sp)
@@ -54,30 +60,26 @@ namespace TP_Personal_DYAS_DAL
 
         public int Escribir(string sp, SqlParameter[] parametro)
         {
-            try
+            int affectedRows = 0;
+                
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.Transaction = this.transaccion;
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = sp;
+            if (parametro != null)
             {
-                int affectedRows = 0;
-                Conectar();
-                SqlCommand command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = sp;
-                if (parametro != null)
-                {
-                    command.Parameters.AddRange(parametro);
-                    affectedRows = command.ExecuteNonQuery();
-                }
-                else
-                {
-                    affectedRows = command.ExecuteNonQuery();
-                }
-                command.Parameters.Clear();
-
-                return affectedRows;
-            } finally
-            {
-                Desconectar();
+                command.Parameters.AddRange(parametro);
+                affectedRows = command.ExecuteNonQuery();
             }
+            else
+            {
+                affectedRows = command.ExecuteNonQuery();
+            }
+            command.Parameters.Clear();
+
+            return affectedRows;
+            
         }
 
         public DataTable Leer(string sp)

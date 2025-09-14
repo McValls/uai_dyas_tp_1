@@ -15,9 +15,9 @@ namespace TP_Personal_DYAS
     public partial class PersonaUserControl : UserControl
     {
 
-        public Personas personas = new Personas();
-        public Profesiones profesiones = new Profesiones();
-        public Nacionalidades nacionalidades = new Nacionalidades();
+        public PersonaBLL personas = new PersonaBLL();
+        public ProfesionBLL profesiones = new ProfesionBLL();
+        public NacionalidadBLL nacionalidades = new NacionalidadBLL();
 
 
         public PersonaUserControl()

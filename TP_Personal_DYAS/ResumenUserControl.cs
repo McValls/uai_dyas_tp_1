@@ -15,9 +15,9 @@ namespace TP_Personal_DYAS
     public partial class ResumenUserControl : UserControl
     {
 
-        Personas personas = new Personas();
-        Nacionalidades nacionalidades = new Nacionalidades();
-        Profesiones profesiones = new Profesiones();
+        PersonaBLL personas = new PersonaBLL();
+        NacionalidadBLL nacionalidades = new NacionalidadBLL();
+        ProfesionBLL profesiones = new ProfesionBLL();
         public ResumenUserControl()
         {
             InitializeComponent();

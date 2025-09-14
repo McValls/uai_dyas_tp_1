@@ -58,22 +58,27 @@ namespace TP_Personal_DYAS_DAL
 
         protected abstract T ParseRow(DataRow row);
 
+        public void IniciarTransaccion()
+        {
+            acceso.IniciarTransaccion();
+        }
+
+        public void Commit()
+        {
+            acceso.CommitTransaccion();
+        }
+
+        public void Rollback()
+        {
+            acceso.RollbackTransaccion();
+        }
+
         public int Insertar(T t)
         {
 
             int affectedRows = 0;
             SqlParameter[] parametro = ParseData(t);
-
-            var tx = acceso.IniciarTransaccion();
-            try
-            {
-                affectedRows = acceso.Escribir(insertarStoreProcedure, parametro);
-                acceso.CommitTransaccion(tx);
-            } catch (Exception ex)
-            {
-                acceso.RollbackTransaccion(tx);
-                throw ex;
-            }
+            affectedRows = acceso.Escribir(insertarStoreProcedure, parametro);
 
             return affectedRows;
         }
@@ -83,15 +88,15 @@ namespace TP_Personal_DYAS_DAL
             int affectedRows = 0;
             SqlParameter[] parametro = ParseData(t);
             
-            var tx = acceso.IniciarTransaccion();
+            acceso.IniciarTransaccion();
             try
             {
                 affectedRows = acceso.Escribir(editarStoreProcedure, parametro);
-                acceso.CommitTransaccion(tx);
+                acceso.CommitTransaccion();
             }
             catch (Exception ex)
             {
-                acceso.RollbackTransaccion(tx);
+                acceso.RollbackTransaccion();
                 throw ex;
             }
 
@@ -104,15 +109,15 @@ namespace TP_Personal_DYAS_DAL
             SqlParameter[] parametro = new SqlParameter[1];
             parametro[0] = new SqlParameter($"@{columnaPK.ToLower()}", pk);
             
-            var tx = acceso.IniciarTransaccion();
+            acceso.IniciarTransaccion();
             try
             {
                 affectedRows = acceso.Escribir(eliminarStoreProcedure, parametro);
-                acceso.CommitTransaccion(tx);
+                acceso.CommitTransaccion();
             }
             catch (Exception ex)
             {
-                acceso.RollbackTransaccion(tx);
+                acceso.RollbackTransaccion();
                 throw ex;
             }
 
