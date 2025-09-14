@@ -65,17 +65,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="NacionalidadForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="NacionalidadForm.Designer.cs">
+      <DependentUpon>NacionalidadForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonaUserControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="PersonaForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonaUserControl.Designer.cs">
-      <DependentUpon>PersonaUserControl.cs</DependentUpon>
+    <Compile Include="PersonaForm.Designer.cs">
+      <DependentUpon>PersonaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfesionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfesionForm.Designer.cs">
+      <DependentUpon>ProfesionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResumenForm.Designer.cs">
+      <DependentUpon>ResumenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ResumenUserControl.cs">
       <SubType>UserControl</SubType>
@@ -83,43 +95,28 @@
     <Compile Include="ResumenUserControl.Designer.cs">
       <DependentUpon>ResumenUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TPPersonalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TPPersonalForm.Designer.cs">
-      <DependentUpon>TPPersonalForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NacionalidadUserControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="TPPersonalMainForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NacionalidadUserControl.Designer.cs">
-      <DependentUpon>NacionalidadUserControl.cs</DependentUpon>
+    <Compile Include="TPPersonalMainForm.Designer.cs">
+      <DependentUpon>TPPersonalMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfesionUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ProfesionUserControl.Designer.cs">
-      <DependentUpon>ProfesionUserControl.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="NacionalidadForm.resx">
+      <DependentUpon>NacionalidadForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NacionalidadUserControl.resx">
-      <DependentUpon>NacionalidadUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="PersonaForm.resx">
+      <DependentUpon>PersonaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonaUserControl.resx">
-      <DependentUpon>PersonaUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="ProfesionForm.resx">
+      <DependentUpon>ProfesionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfesionUserControl.resx">
-      <DependentUpon>ProfesionUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="ResumenForm.resx">
+      <DependentUpon>ResumenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ResumenUserControl.resx">
       <DependentUpon>ResumenUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TPPersonalForm.resx">
-      <DependentUpon>TPPersonalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +127,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TPPersonalMainForm.resx">
+      <DependentUpon>TPPersonalMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

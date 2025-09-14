@@ -16,7 +16,7 @@ namespace TP_Personal_DYAS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TPPersonalForm());
+            Application.Run(new TPPersonalMainForm());
         }
     }
 }
