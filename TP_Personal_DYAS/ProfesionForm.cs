@@ -14,14 +14,14 @@ namespace TP_Personal_DYAS
 {
     public partial class ProfesionForm : Form
     {
-        ProfesionBLL profesiones;
+        ProfesionBLL profesionBLL;
 
         public ProfesionForm()
         {
             InitializeComponent();
-            profesiones = new ProfesionBLL();
+            profesionBLL = new ProfesionBLL();
 
-            profesiones.OnChangeEvent += RefrescarTabla;
+            profesionBLL.OnChangeEvent += RefrescarTabla;
             RefrescarTabla();
         }
 
@@ -36,7 +36,7 @@ namespace TP_Personal_DYAS
                     return;
                 }
                 Profesion profesion = new Profesion(descripcion);
-                profesiones.CreateProfesion(profesion);
+                profesionBLL.CreateProfesion(profesion);
             }
             catch (Exception ex)
             {
@@ -45,7 +45,7 @@ namespace TP_Personal_DYAS
         }
         public void RefrescarTabla()
         {
-            ProfesionDataSourceGrid.DataSource = profesiones.GetProfesiones()
+            ProfesionDataSourceGrid.DataSource = profesionBLL.GetProfesiones()
                 .Select(profesion => new ProfesionDataSource(profesion))
                 .ToList();
         }
@@ -69,7 +69,7 @@ namespace TP_Personal_DYAS
             {
                 ProfesionDataSource profesionDS = (ProfesionDataSource)ProfesionDataSourceGrid.Rows[e.RowIndex].DataBoundItem;
                 Profesion profesion = new Profesion(profesionDS.Id);
-                profesiones.EliminarProfesion(profesion);
+                profesionBLL.EliminarProfesion(profesion);
             }
             catch (Exception ex)
             {
@@ -88,7 +88,7 @@ namespace TP_Personal_DYAS
                     MessageBox.Show($"La descripción no puede estar vacía");
                     return;
                 }
-                profesiones.UpdateProfesion(profesion);
+                profesionBLL.UpdateProfesion(profesion);
             }
             catch (Exception ex)
             {

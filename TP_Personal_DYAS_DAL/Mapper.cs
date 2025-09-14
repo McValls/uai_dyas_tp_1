@@ -87,18 +87,7 @@ namespace TP_Personal_DYAS_DAL
         {
             int affectedRows = 0;
             SqlParameter[] parametro = ParseData(t);
-            
-            acceso.IniciarTransaccion();
-            try
-            {
-                affectedRows = acceso.Escribir(editarStoreProcedure, parametro);
-                acceso.CommitTransaccion();
-            }
-            catch (Exception ex)
-            {
-                acceso.RollbackTransaccion();
-                throw ex;
-            }
+            affectedRows = acceso.Escribir(editarStoreProcedure, parametro);
 
             return affectedRows;
         }
@@ -108,18 +97,7 @@ namespace TP_Personal_DYAS_DAL
             int affectedRows = 0;
             SqlParameter[] parametro = new SqlParameter[1];
             parametro[0] = new SqlParameter($"@{columnaPK.ToLower()}", pk);
-            
-            acceso.IniciarTransaccion();
-            try
-            {
-                affectedRows = acceso.Escribir(eliminarStoreProcedure, parametro);
-                acceso.CommitTransaccion();
-            }
-            catch (Exception ex)
-            {
-                acceso.RollbackTransaccion();
-                throw ex;
-            }
+            affectedRows = acceso.Escribir(eliminarStoreProcedure, parametro);
 
             return affectedRows;
         }

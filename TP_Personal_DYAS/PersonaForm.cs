@@ -15,17 +15,15 @@ namespace TP_Personal_DYAS
     public partial class PersonaForm : Form
     {
 
-        public PersonaBLL personas = new PersonaBLL();
-        public ProfesionBLL profesiones = new ProfesionBLL();
-        public NacionalidadBLL nacionalidades = new NacionalidadBLL();
-
-
+        public PersonaBLL personaBLL = new PersonaBLL();
+        public ProfesionBLL profesionBLL = new ProfesionBLL();
+        public NacionalidadBLL nacionalidadBLL = new NacionalidadBLL();
         public PersonaForm()
         {
             InitializeComponent();
             sexoCombo.DataSource = Enum.GetValues(typeof(Sexo));
             Sexo.DataSource = Enum.GetValues(typeof(Sexo));
-            List<Profesion> profesionesList = profesiones.GetProfesiones();
+            List<Profesion> profesionesList = profesionBLL.GetProfesiones();
             if (profesionesList.Count == 0)
             {
                 MessageBox.Show("Antes de comenzar, es necesario que crees al menos 1 profesión");
@@ -38,7 +36,7 @@ namespace TP_Personal_DYAS
             Profesion.DisplayMember = "descripcion";
             Profesion.ValueMember = "id";
 
-            List<Nacionalidad> nacionalidadesList = nacionalidades.GetNacionalidades();
+            List<Nacionalidad> nacionalidadesList = nacionalidadBLL.GetNacionalidades();
             if (nacionalidadesList.Count == 0)
             {
 
@@ -51,7 +49,7 @@ namespace TP_Personal_DYAS
             Nacionalidad.DisplayMember = "descripcion";
             Nacionalidad.ValueMember = "id";
 
-            personas.OnChangeEvent += RefrescarTabla;
+            personaBLL.OnChangeEvent += RefrescarTabla;
 
             RefrescarTabla();
         }
@@ -99,7 +97,7 @@ namespace TP_Personal_DYAS
                 }
 
                 Persona persona = new Persona(nombre, apellido, fechaNacimiento, sexo, idNacionalidad, idProfesion);
-                personas.CreatePersona(persona);
+                personaBLL.CreatePersona(persona);
             }
             catch (Exception ex)
             {
@@ -110,14 +108,14 @@ namespace TP_Personal_DYAS
         public void RefrescarTabla()
         {
             personasDataGridView.AutoGenerateColumns = false;
-            personasDataGridView.DataSource = personas.GetPersonas()
+            personasDataGridView.DataSource = personaBLL.GetPersonas()
                 .Select(persona => new PersonaDataSource(persona))
                 .ToList();
         }
 
         public void RefrescarTabla(int nroPersona)
         {
-            personasDataGridView.DataSource = personas.GetPersonas(nroPersona)
+            personasDataGridView.DataSource = personaBLL.GetPersonas(nroPersona)
                 .Select(persona => new PersonaDataSource(persona))
                 .ToList();
         }
@@ -141,7 +139,7 @@ namespace TP_Personal_DYAS
             {
                 PersonaDataSource personaDataSource = (PersonaDataSource)personasDataGridView.Rows[e.RowIndex].DataBoundItem;
                 Persona persona = new Persona(personaDataSource.NroPersona);
-                personas.EliminarPersona(persona);
+                personaBLL.EliminarPersona(persona);
             }
             catch (Exception ex)
             {
@@ -193,7 +191,7 @@ namespace TP_Personal_DYAS
                 }
 
                 Persona persona = new Persona(nroPersona, nombre, apellido, fechaNacimiento, sexo, idNacionalidad, idProfesion);
-                personas.UpdatePersona(persona);
+                personaBLL.UpdatePersona(persona);
             }
             catch (Exception ex)
             {

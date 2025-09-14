@@ -14,9 +14,9 @@ namespace TP_Personal_DYAS
 {
     public partial class ResumenForm : Form
     {
-        Personas personas = new Personas();
-        Nacionalidades nacionalidades = new Nacionalidades();
-        Profesiones profesiones = new Profesiones();
+        PersonaBLL personaBLL = new PersonaBLL();
+        NacionalidadBLL nacionalidadBLL = new NacionalidadBLL();
+        ProfesionBLL profesionBLL = new ProfesionBLL();
 
         public ResumenForm()
         {
@@ -25,18 +25,18 @@ namespace TP_Personal_DYAS
 
         private void ResumenForm_Load(object sender, EventArgs e)
         {
-            personasRegistradasTxt.Text = personas.CantidadPersonas().ToString();
-            promedioEdadesTxt.Text = personas.PromedioEdad().ToString();
-            edadMinimaTxt.Text = personas.EdadMinima().ToString();
-            edadMaximaTxt.Text = personas.EdadMaxima().ToString();
-            if (nacionalidades.GetNacionalidades().Count > 0)
+            personasRegistradasTxt.Text = personaBLL.CantidadPersonas().ToString();
+            promedioEdadesTxt.Text = personaBLL.PromedioEdad().ToString();
+            edadMinimaTxt.Text = personaBLL.EdadMinima().ToString();
+            edadMaximaTxt.Text = personaBLL.EdadMaxima().ToString();
+            if (nacionalidadBLL.GetNacionalidades().Count > 0)
             {
-                nacionalidadConMasPersonasTxt.Text = nacionalidades.NacionalidadConMasPersonas().Descripcion;
-                nacionalidadConMenosPersonasTxt.Text = nacionalidades.NacionalidadConMenosPersonas().Descripcion;
+                nacionalidadConMasPersonasTxt.Text = nacionalidadBLL.NacionalidadConMasPersonas().Descripcion;
+                nacionalidadConMenosPersonasTxt.Text = nacionalidadBLL.NacionalidadConMenosPersonas().Descripcion;
             }
 
-            Dictionary<Nacionalidad, int> personasPorNacionalidad = nacionalidades.PersonasPorNacionalidad();
-            Dictionary<Nacionalidad, int> promedioEdadPorNacionalidad = nacionalidades.PromedioEdadPorNacionalidad();
+            Dictionary<Nacionalidad, int> personasPorNacionalidad = nacionalidadBLL.PersonasPorNacionalidad();
+            Dictionary<Nacionalidad, int> promedioEdadPorNacionalidad = nacionalidadBLL.PromedioEdadPorNacionalidad();
 
             nacionalidadesDataGridView.DataSource = personasPorNacionalidad.Select((nacionalidadPersonas) =>
             {
@@ -45,9 +45,9 @@ namespace TP_Personal_DYAS
             }).ToList();
 
             // Punto adicional:
-            if (profesiones.GetProfesiones().Count > 0)
+            if (profesionBLL.GetProfesiones().Count > 0)
             {
-                profesionConMasPersonasTxt.Text = profesiones.ProfesionConMasPersonas().Descripcion;
+                profesionConMasPersonasTxt.Text = profesionBLL.ProfesionConMasPersonas().Descripcion;
             }
         }
 
