@@ -12,6 +12,9 @@ namespace TP_Personal_DYAS
 {
     public partial class TPPersonalMainForm : Form
     {
+
+        private readonly List<Form> formsActivos = new List<Form>();
+
         public TPPersonalMainForm()
         {
             InitializeComponent();
@@ -19,37 +22,57 @@ namespace TP_Personal_DYAS
 
         private void TPPersonalMainForm_Load(object sender, EventArgs e)
         {
-            PersonaForm personaForm = new PersonaForm();
-            personaForm.MdiParent = this;
-            personaForm.Show();
+            crearForm(new PersonaForm());
         }
 
         private void nacionalidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NacionalidadForm nacionalidadForm = new NacionalidadForm();
-            nacionalidadForm.MdiParent = this;
-            nacionalidadForm.Show();
+            Form nacionalidadForm = formsActivos.FindLast(f => f is NacionalidadForm);
+            if (nacionalidadForm == null)
+            {
+                nacionalidadForm = crearForm(new NacionalidadForm());
+            }
+            nacionalidadForm.Activate();
         }
 
         private void profesionesToolStripMenuItem_Click_1(object sender, EventArgs e)
-        { 
-            ProfesionForm profesionForm = new ProfesionForm();
-            profesionForm.MdiParent = this;
-            profesionForm.Show();
+        {
+            Form profesionForm = formsActivos.FindLast(f => f is ProfesionForm);
+            if (profesionForm == null)
+            {
+                profesionForm = crearForm(new ProfesionForm());
+            }
+            profesionForm.Activate();
         }
 
         private void verResumenToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            ResumenForm resumenForm = new ResumenForm();
-            resumenForm.MdiParent = this;
-            resumenForm.Show();
+            Form resumenForm = formsActivos.FindLast(f => f is ResumenForm);
+            if (resumenForm == null)
+            {
+                resumenForm = crearForm(new ResumenForm());
+            }
+            resumenForm.Activate();
         }
 
         private void personalToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            PersonaForm personaForm = new PersonaForm();
-            personaForm.MdiParent = this;
-            personaForm.Show();
+            Form personaForm = formsActivos.FindLast(f => f is PersonaForm);
+            if (personaForm == null)
+            {
+                personaForm = crearForm(new PersonaForm());
+            }
+            personaForm.Activate();
+        }
+
+        private Form crearForm(Form form)
+        {
+            form.MdiParent = this;
+            form.Show();
+            form.FormClosed += (s, ev) => formsActivos.Remove(form);
+            formsActivos.Add(form);
+
+            return form;
         }
     }
 }
