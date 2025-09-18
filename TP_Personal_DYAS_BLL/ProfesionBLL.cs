@@ -27,65 +27,32 @@ namespace TP_Personal_DYAS_BLL
 
         public void CreateProfesion(Profesion profesion)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Insertar(profesion);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Insertar(profesion);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo crear la profesion");
-                }
-                mapper.Commit();
-                OnChangeEvent();
-
+                throw new Exception("No se pudo crear la profesion");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
 
         public void EliminarProfesion(Profesion profesion)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Eliminar(profesion.Id);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Eliminar(profesion.Id);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo eliminar la profesion");
-                }
-                mapper.Commit();
-                OnChangeEvent();
-
+                throw new Exception("No se pudo eliminar la profesion");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
 
         public void UpdateProfesion(Profesion profesion)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Editar(profesion);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Editar(profesion);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo editar la profesion");
-                }
-                mapper.Commit();
-                OnChangeEvent();
-
+                throw new Exception("No se pudo editar la profesion");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
     }
 }

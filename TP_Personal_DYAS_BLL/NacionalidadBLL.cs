@@ -42,61 +42,32 @@ namespace TP_Personal_DYAS_BLL
 
         public void CreateNacionalidad(Nacionalidad nacionalidad)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Insertar(nacionalidad);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Insertar(nacionalidad);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo crear la nacionalidad");
-                }
-                mapper.Commit();
-                OnChangeEvent();
-            } catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
+                throw new Exception("No se pudo crear la nacionalidad");
             }
+            OnChangeEvent();
         }
         
         public void EliminarNacionalidad(Nacionalidad nacionalidad)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Eliminar(nacionalidad.Id);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Eliminar(nacionalidad.Id);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo eliminar la nacionalidad");
-                }
-                mapper.Commit();
-                OnChangeEvent();
+                throw new Exception("No se pudo eliminar la nacionalidad");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
 
         public void UpdateNacionalidad(Nacionalidad nacionalidad)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Editar(nacionalidad);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Editar(nacionalidad);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo editar la nacionalidad");
-                }
-                mapper.Commit();
-                OnChangeEvent();
+                throw new Exception("No se pudo editar la nacionalidad");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
     }
 }

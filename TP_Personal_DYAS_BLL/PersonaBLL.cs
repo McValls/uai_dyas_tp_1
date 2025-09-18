@@ -47,65 +47,33 @@ namespace TP_Personal_DYAS_BLL
         public void CreatePersona(Persona persona)
         {
             ValidarPersona(persona);
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Insertar(persona);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Insertar(persona);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo crear la persona");
-                }
-                mapper.Commit();
-                OnChangeEvent();
+                throw new Exception("No se pudo crear la persona");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
-
+            OnChangeEvent();
         }
 
         public void EliminarPersona(Persona persona)
         {
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Eliminar(persona.NroPersona);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Eliminar(persona.NroPersona);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo eliminar la persona");
-                }
-                mapper.Commit();
-                OnChangeEvent();
+                throw new Exception("No se pudo eliminar la persona");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
 
         public void UpdatePersona(Persona persona)
         {
             ValidarPersona(persona);
-            mapper.IniciarTransaccion();
-            try
+            int affectedRows = mapper.Editar(persona);
+            if (affectedRows == 0)
             {
-                int affectedRows = mapper.Editar(persona);
-                if (affectedRows == 0)
-                {
-                    throw new Exception("No se pudo editar la persona");
-                }
-                mapper.Commit();
-                OnChangeEvent();
-
+                throw new Exception("No se pudo editar la persona");
             }
-            catch (Exception ex)
-            {
-                mapper.Rollback();
-                throw ex;
-            }
+            OnChangeEvent();
         }
 
         private void ValidarPersona(Persona persona)

@@ -61,25 +61,50 @@ namespace TP_Personal_DYAS_DAL
         public int Escribir(string sp, SqlParameter[] parametro)
         {
             int affectedRows = 0;
-                
-            SqlCommand command = new SqlCommand();
-            command.Connection = connection;
-            command.Transaction = this.transaccion;
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = sp;
-            if (parametro != null)
-            {
-                command.Parameters.AddRange(parametro);
-                affectedRows = command.ExecuteNonQuery();
-            }
-            else
-            {
-                affectedRows = command.ExecuteNonQuery();
-            }
-            command.Parameters.Clear();
-
-            return affectedRows;
             
+            // Automatically handle transactions for write operations
+            bool transactionStarted = false;
+            if (this.transaccion == null)
+            {
+                IniciarTransaccion();
+                transactionStarted = true;
+            }
+            
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                command.Transaction = this.transaccion;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = sp;
+                if (parametro != null)
+                {
+                    command.Parameters.AddRange(parametro);
+                    affectedRows = command.ExecuteNonQuery();
+                }
+                else
+                {
+                    affectedRows = command.ExecuteNonQuery();
+                }
+                command.Parameters.Clear();
+
+                // If we started the transaction, commit it
+                if (transactionStarted)
+                {
+                    CommitTransaccion();
+                }
+
+                return affectedRows;
+            }
+            catch (Exception ex)
+            {
+                // If we started the transaction, rollback it
+                if (transactionStarted)
+                {
+                    RollbackTransaccion();
+                }
+                throw ex;
+            }
         }
 
         public DataTable Leer(string sp)
@@ -113,5 +138,6 @@ namespace TP_Personal_DYAS_DAL
                 Desconectar();
             }
         }
+
     }
 }
